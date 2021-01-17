@@ -46,4 +46,10 @@ public class SporPeoSerImpl implements SporPeoSer {
     public void updatespor(SporPeoper spor) {
         sporpeDa.updatespor(spor);
     }
+
+    @Override
+    public List<SporPeoper> getData() {
+        List<SporPeoper> sp= sporpeDa.getData();
+        return sp;
+    }
 }

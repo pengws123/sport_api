@@ -17,7 +17,7 @@ public class SxController {
     /*
      * 查询属性名字信息
      * 路径： http://localhost:8080/api/sxvalue/querysxvalue
-     * 请求方式 get
+     * 请求方式 post
      * 参数  attId
      * 返回值
      *  code  info   date:{list  count}

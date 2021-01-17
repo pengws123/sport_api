@@ -44,4 +44,7 @@
     <update id="delspoper" parameterType="int">
         update sp_perpor set  isDel=1 where id=#{id}
     </update>
+    <select id="getData" resultType="com.fh.entity.po.SporPeoper">
+         select * from sp_perpor  where isDel=0
+    </select>
 </mapper>

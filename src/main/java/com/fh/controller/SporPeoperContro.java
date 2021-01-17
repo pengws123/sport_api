@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -125,5 +126,19 @@ public class SporPeoperContro {
         spor.setUpdateDate(new Date());
         sporper.updatespor(spor);
         return ResponseData.success(null);
+    }
+    /*1    查询所有的分类数据
+        路径   http://localhost:8080/api/perpor/getData
+
+        get请求
+
+                参数
+
+        返回值   {"code":200,"inif":"提示",data:[{*}]}*/
+    @GetMapping("getData")
+    public ResponseData getData(){
+
+        List<SporPeoper> spor= sporper.getData();
+        return ResponseData.success(spor);
     }
 }

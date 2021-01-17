@@ -3,6 +3,7 @@ package com.fh.service;
 import com.fh.entity.po.SporPeoper;
 import com.fh.entity.vo.Paramss;
 
+import java.util.List;
 import java.util.Map;
 
 public interface SporPeoSer {
@@ -15,4 +16,6 @@ public interface SporPeoSer {
     SporPeoper selectById(Integer id);
 
     void updatespor(SporPeoper spor);
+
+    List<SporPeoper> getData();
 }
