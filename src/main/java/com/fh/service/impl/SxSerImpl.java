@@ -14,9 +14,16 @@ public class SxSerImpl implements SxSer {
     private SxDao sxDao;
 
     @Override
-    public List<SxValue> querysxvalue() {
-        List<SxValue> list=sxDao.querysxvalue();
+    public List<SxValue> querysxvalue(Integer attId) {
+        List<SxValue> list=sxDao.querysxvalue(attId);
         return list;
+    }
+
+    @Override
+    public SxValue selectById(Integer id) {
+        SxValue sx= sxDao.selectById(id);
+
+        return sx;
     }
 
     @Override

@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
     <mapper namespace="com.fh.dao.SxDao">
-    <select id="querysxvalue" resultType="com.fh.entity.po.SxValue">
+    <select id="querysxvalue" parameterType="int" resultType="com.fh.entity.po.SxValue">
 
-     select * from sp_sxvalue
+     select * from sp_sxvalue where attId=#{attId}
     </select>
 
     <insert id="savexvalue" parameterType="com.fh.entity.po.SxValue">
@@ -15,4 +15,8 @@
     <delete id="delxvalue" parameterType="int">
         delete from sp_sxvalue where  id=#{id}
     </delete>
+
+    <select id="selectById" parameterType="int" resultType="com.fh.entity.po.SxValue">
+        select * from sp_sxvalue where id=#{id}
+    </select>
 </mapper>

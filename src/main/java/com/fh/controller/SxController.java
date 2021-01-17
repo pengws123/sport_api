@@ -18,14 +18,15 @@ public class SxController {
      * 查询属性名字信息
      * 路径： http://localhost:8080/api/sxvalue/querysxvalue
      * 请求方式 get
+     * 参数  attId
      * 返回值
      *  code  info   date:{list  count}
      *
      * */
     @GetMapping("querysxvalue")
-    public ResponseData querysxvalue(){
+    public ResponseData querysxvalue(Integer attId){
 
-        List<SxValue> sxvalue= sxSer.querysxvalue();
+        List<SxValue> sxvalue= sxSer.querysxvalue(attId);
         return ResponseData.success(sxvalue);
     }
 
@@ -63,5 +64,23 @@ public class SxController {
          }
          sxSer.delxvalue(id);
          return ResponseData.success(null);
+     }
+
+     /* 修改通过id进行查询
+
+    路径    http://localhost:8080/api/sxvalue/selectById
+
+    post请求
+
+    参数   id （必传）
+
+    返回值     {code:"",inif:"",data:}*/
+     @PostMapping("selectById")
+    public ResponseData selectById(Integer id){
+         if (id==null){
+             return ResponseData.error(400,"id没有值");
+         }
+         SxValue sx=  sxSer.selectById(id);
+         return ResponseData.success(sx);
      }
 }
