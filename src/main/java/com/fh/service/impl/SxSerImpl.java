@@ -24,5 +24,10 @@ public class SxSerImpl implements SxSer {
         sxDao.savexvalue(sx);
     }
 
+    @Override
+    public void delxvalue(Integer id) {
+        sxDao.delxvalue(id);
+    }
+
 
 }

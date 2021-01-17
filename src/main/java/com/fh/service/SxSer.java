@@ -8,4 +8,6 @@ public interface SxSer {
     List<SxValue> querysxvalue();
 
     void savexvalue(SxValue sx);
+
+    void delxvalue(Integer id);
 }

@@ -12,4 +12,7 @@
     <insert id="savexvalue" parameterType="com.fh.entity.po.SxValue">
         insert  into sp_sxvalue (name,nameCH,attId) value  (#{name},#{nameCH},#{attId})
     </insert>
+    <delete id="delxvalue" parameterType="int">
+        delete from sp_sxvalue where  id=#{id}
+    </delete>
 </mapper>

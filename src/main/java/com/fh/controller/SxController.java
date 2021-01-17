@@ -46,4 +46,22 @@ public class SxController {
          sxSer.savexvalue(sx);
         return ResponseData.success(null);
     }
+
+     /* 删除
+
+    路径    http://localhost:8080/api/sxvalue/delxvalue
+
+    post请求
+
+    参数   id （必传）
+
+    返回值     {code:"",inif:"",data:}*/
+     @PostMapping("delxvalue")
+    public ResponseData delxvalue(Integer id){
+         if (id==null){
+             return ResponseData.error(400,"id没有值");
+         }
+         sxSer.delxvalue(id);
+         return ResponseData.success(null);
+     }
 }
