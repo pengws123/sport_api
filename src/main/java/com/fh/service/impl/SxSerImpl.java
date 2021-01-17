@@ -27,6 +27,11 @@ public class SxSerImpl implements SxSer {
     }
 
     @Override
+    public void updatexvalue(SxValue sx) {
+        sxDao.updatexvalue(sx);
+    }
+
+    @Override
     public void savexvalue(SxValue sx) {
         sxDao.savexvalue(sx);
     }

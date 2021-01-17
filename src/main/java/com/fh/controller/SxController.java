@@ -83,4 +83,21 @@ public class SxController {
          SxValue sx=  sxSer.selectById(id);
          return ResponseData.success(sx);
      }
+     /* 修改
+
+    路径    http://localhost:8080/api/sxvalue/updatexvalue
+
+    post请求
+
+    参数   id （必传）        name nameCH
+
+    返回值     {code:"",inif:""}*/
+     @PostMapping("updatexvalue")
+    public ResponseData updatexvalue(SxValue sx){
+         if (sx==null){
+             return ResponseData.error(400,"spo没有值");
+         }
+         sxSer.updatexvalue(sx);
+         return ResponseData.success(null);
+     }
 }

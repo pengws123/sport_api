@@ -12,4 +12,6 @@ public interface SxDao {
     void delxvalue(Integer id);
 
     SxValue selectById(Integer id);
+
+    void updatexvalue(SxValue sx);
 }

@@ -13,4 +13,6 @@ public interface SxSer {
     List<SxValue> querysxvalue(Integer attId);
 
     SxValue selectById(Integer id);
+
+    void updatexvalue(SxValue sx);
 }
