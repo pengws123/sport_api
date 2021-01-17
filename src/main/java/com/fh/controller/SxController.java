@@ -3,10 +3,7 @@ package com.fh.controller;
 import com.fh.entity.po.SxValue;
 import com.fh.entity.vo.ResponseData;
 import com.fh.service.SxSer;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -30,5 +27,23 @@ public class SxController {
 
         List<SxValue> sxvalue= sxSer.querysxvalue();
         return ResponseData.success(sxvalue);
+    }
+
+ /*  新增分类
+
+    路径    http://localhost:8080/api/sxvalue/savexvalue
+
+    post请求
+
+    参数    pid    name nameCH
+
+    返回值    {code:"",inif:"",data:新增的id}*/
+    @PostMapping("savexvalue")
+    public  ResponseData savexvalue (SxValue sx){
+        if (sx==null){
+            return ResponseData.error(400,"spo没有值");
+        }
+         sxSer.savexvalue(sx);
+        return ResponseData.success(null);
     }
 }

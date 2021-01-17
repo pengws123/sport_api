@@ -5,7 +5,6 @@ public class SxValue {
  private  Integer   id ;// 主键
  private String   name;//
  private String   nameCH;//
- private Integer   isDel;
  private Integer   attId ; //属性id
 
     public Integer getId() {
@@ -32,13 +31,6 @@ public class SxValue {
         this.nameCH = nameCH;
     }
 
-    public Integer getIsDel() {
-        return isDel;
-    }
-
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
-    }
 
     public Integer getAttId() {
         return attId;

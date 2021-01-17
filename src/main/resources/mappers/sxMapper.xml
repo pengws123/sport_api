@@ -6,7 +6,10 @@
     <mapper namespace="com.fh.dao.SxDao">
     <select id="querysxvalue" resultType="com.fh.entity.po.SxValue">
 
-     select * from sp_sxvalue where isDel=0
+     select * from sp_sxvalue
     </select>
 
+    <insert id="savexvalue" parameterType="com.fh.entity.po.SxValue">
+        insert  into sp_sxvalue (name,nameCH,attId) value  (#{name},#{nameCH},#{attId})
+    </insert>
 </mapper>

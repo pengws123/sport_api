@@ -18,4 +18,11 @@ public class SxSerImpl implements SxSer {
         List<SxValue> list=sxDao.querysxvalue();
         return list;
     }
+
+    @Override
+    public void savexvalue(SxValue sx) {
+        sxDao.savexvalue(sx);
+    }
+
+
 }
