@@ -6,15 +6,15 @@
     <mapper namespace="com.fh.dao.SxDao">
     <select id="querysxvalue" parameterType="int" resultType="com.fh.entity.po.SxValue">
 
-     select * from sp_sxvalue where attId=#{attId}
+     select * from sp_sxvalue where attId=#{attId} and isDel=0
     </select>
 
     <insert id="savexvalue" parameterType="com.fh.entity.po.SxValue">
         insert  into sp_sxvalue (name,nameCH,attId) value  (#{name},#{nameCH},#{attId})
     </insert>
-    <delete id="delxvalue" parameterType="int">
-        delete from sp_sxvalue where  id=#{id}
-    </delete>
+    <update id="delxvalue" parameterType="int">
+        update sp_sxvalue set  isDel=1 where id=#{id}
+    </update>
 
     <select id="selectById" parameterType="int" resultType="com.fh.entity.po.SxValue">
         select * from sp_sxvalue where id=#{id}
