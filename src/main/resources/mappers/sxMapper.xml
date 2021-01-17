@@ -10,7 +10,7 @@
     </select>
 
     <insert id="savexvalue" parameterType="com.fh.entity.po.SxValue">
-        insert  into sp_sxvalue (name,nameCH,attId) value  (#{name},#{nameCH},#{attId})
+        insert  into sp_sxvalue (name,nameCH,attId,isDel) value  (#{name},#{nameCH},#{attId},#{isDel})
     </insert>
     <update id="delxvalue" parameterType="int">
         update sp_sxvalue set  isDel=1 where id=#{id}

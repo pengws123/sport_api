@@ -44,6 +44,7 @@ public class SxController {
         if (sx==null){
             return ResponseData.error(400,"spo没有值");
         }
+            sx.setIsDel(0);
          sxSer.savexvalue(sx);
         return ResponseData.success(null);
     }
