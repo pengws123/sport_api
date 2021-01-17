@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.fh.dao.SpoDao">
+    <select id="getData" resultType="com.fh.entity.po.SportType">
+
+     select * from sp_type where isDel=0
+    </select>
+
+    <select id="getDataByPid" parameterType="int" resultType="com.fh.entity.po.SportType" >
+        select * from sp_type where pid=#{pid} and isDel=0
+    </select>
+
+    <insert id="add" parameterType="com.fh.entity.po.SportType" keyProperty="id" useGeneratedKeys="true">
+        insert  into  sp_type (pid,name,createDate,isDel) value(#{pid},#{name},#{createDate},#{isDel})
+    </insert>
+
+    <select id="selected" parameterType="java.util.Date" resultType="int">
+        select id from sp_type where createDate=#{createDate}
+    </select>
+
+    <select id="updateById" parameterType="int" resultType="com.fh.entity.po.SportType">
+        select * from sp_type where id=#{id}
+    </select>
+
+    <update id="update" parameterType="com.fh.entity.po.SportType">
+    update sp_type set updateDate=#{updateDate}
+        <if test='name != null and name != &quot;&quot;'>, name  = #{name} </if>
+        <if test='pid != null and pid != &quot;&quot;'>  , pid  = #{pid} </if>
+        <if test='isDel != null and isDel != &quot;&quot;'>  , isDel  = #{isDel}</if>
+        where id=#{id}
+
+    </update>
+    <update id="delsorp" parameterType="int">
+        update sp_type set  isDel=1 where id=#{id}
+    </update>
+</mapper>

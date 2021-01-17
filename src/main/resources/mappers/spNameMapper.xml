@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.fh.dao.SpnameDao">
+    <select id="querycount" parameterType="com.fh.entity.vo.Paramss" resultType="int" >
+
+     select count(*) from sp_spname where 1=1
+        <if test='name != null and name != &quot;&quot;'>
+            and name like "%"#{name}"%"
+        </if>
+        and  isdel=0
+    </select>
+
+    <select id="queryspname" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.SporyName" >
+        select * from sp_spname where 1=1
+        <if test='name != null and name != &quot;&quot;'>
+            and name like "%"#{name}"%"
+        </if>
+        and  isdel=0   order by ord desc
+        limit ${size*(start-1)},#{size}
+    </select>
+
+    <insert id="savespname" parameterType="com.fh.entity.po.SporyName">
+        insert  into  sp_spname (name,bandE,imgpath,bandDesc,ord,isdel,createDate)
+        value
+        (#{name},#{bandE},#{imgpath},#{bandDesc},#{ord},#{isdel},#{createDate})
+    </insert>
+
+    <select id="selectspname" parameterType="int" resultType="com.fh.entity.po.SporyName">
+        select * from sp_spname where id=#{id}
+    </select>
+
+    <update id="updatespname" parameterType="com.fh.entity.po.SporyName">
+    update sp_spname set name=#{name},bandE=#{bandE},imgpath=#{imgpath},bandDesc=#{bandDesc},updateDate=#{updateDate},author=#{author} where id=#{id}
+    </update>
+    <update id="delspname" parameterType="int">
+        update sp_spname set  isdel=1 where id=#{id}
+    </update>
+</mapper>

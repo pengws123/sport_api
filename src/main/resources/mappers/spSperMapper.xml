@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.fh.dao.SporPeoperDao">
+    <select id="querycount" parameterType="com.fh.entity.vo.Paramss" resultType="int" >
+
+     select count(*) from sp_perpor where 1=1
+        <if test='name != null and name != &quot;&quot;'>
+            and name like "%"#{name}"%"
+        </if>
+        <if test='nameCH != null and nameCH != &quot;&quot;'>
+            and nameCH like "%"#{nameCH}"%"
+        </if>
+        and  isDel=0
+    </select>
+
+    <select id="queryspoper" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.SporPeoper" >
+        select * from sp_perpor where 1=1
+        <if test='name != null and name != &quot;&quot;'>
+            and name like "%"#{name}"%"
+        </if>
+        <if test='nameCH != null and nameCH != &quot;&quot;'>
+            and nameCH like "%"#{nameCH}"%"
+        </if>
+        and  isDel=0
+        limit ${size*(start-1)},#{size}
+    </select>
+
+    <insert id="savespoper" parameterType="com.fh.entity.po.SporPeoper">
+        insert  into  sp_perpor (name,nameCH,typeId,type,isSKU,isDel,createDate,author)
+        value
+        (#{name},#{nameCH},#{typeId},#{type},#{isSKU},#{isDel},#{createDate},#{author})
+    </insert>
+
+    <select id="selectById" parameterType="int" resultType="com.fh.entity.po.SporPeoper">
+        select * from sp_perpor where id=#{id}
+    </select>
+
+    <update id="updatespor" parameterType="com.fh.entity.po.SporPeoper">
+    update sp_perpor set name=#{name},nameCH=#{nameCH},typeId=#{typeId},type=#{type},isSKU=#{isSKU},updateDate=#{updateDate},author=#{author} where id=#{id}
+    </update>
+    <update id="delspoper" parameterType="int">
+        update sp_perpor set  isDel=1 where id=#{id}
+    </update>
+</mapper>
