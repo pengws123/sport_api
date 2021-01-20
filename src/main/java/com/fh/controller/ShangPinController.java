@@ -41,4 +41,24 @@ public class ShangPinController {
         shangPinSer.savesshangpin(shan);
         return ResponseData.success(null);
     }
+
+    /*
+     * 删除商品信息
+     * 路径： http://localhost:8080/api/pin/delshangpin
+     * 请求方式 post
+     *
+     * 参数   id
+     *  SporPeoper   对象
+     *
+     *  返回值  code  info
+     * */
+
+    @PostMapping("delshangpin")
+    public ResponseData delshangpin(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+        shangPinSer.delshangpin(id);
+        return ResponseData.success(null);
+    }
 }

@@ -8,4 +8,8 @@
         insert into sp_sangpin (name,title,bandId,productdecs,price,stocks,sortNum,createDate,perporId,imgPath,author,isDel) value
         (#{name},#{title},#{bandId},#{productdecs},#{price},#{stocks},#{sortNum},#{createDate},#{perporId},#{imgPath},#{author},#{isDel})
     </insert>
+
+    <update id="delshangpin" parameterType="int">
+        update sp_sangpin set isDel=1 where  id=#{id}
+    </update>
     </mapper>

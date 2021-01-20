@@ -17,4 +17,9 @@ public class ShangPinSerImpl implements ShangPinSer {
     public void savesshangpin(ShangPin shan) {
         shangPinDao.savesshangpin(shan);
     }
+
+    @Override
+    public void delshangpin(Integer id) {
+        shangPinDao.delshangpin(id);
+    }
 }
