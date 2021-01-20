@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.fh.dao.ShangPinDao">
+    <insert id="savesshangpin" parameterType="com.fh.entity.po.ShangPin">
+        insert into sp_sangpin (name,title,bandId,productdecs,price,stocks,sortNum,createDate,perporId,imgPath,author,isDel) value
+        (#{name},#{title},#{bandId},#{productdecs},#{price},#{stocks},#{sortNum},#{createDate},#{perporId},#{imgPath},#{author},#{isDel})
+    </insert>
+    </mapper>
