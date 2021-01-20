@@ -18,4 +18,6 @@ public interface SporPeoSer {
     void updatespor(SporPeoper spor);
 
     List<SporPeoper> getData();
+
+    List<SporPeoper> queryByTypeID(Integer typeId);
 }

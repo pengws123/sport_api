@@ -127,7 +127,7 @@ public class SporPeoperContro {
         sporper.updatespor(spor);
         return ResponseData.success(null);
     }
-    /*1    查询所有的分类数据
+    /*    查询所有的分类数据
         路径   http://localhost:8080/api/perpor/getData
 
         get请求
@@ -140,5 +140,22 @@ public class SporPeoperContro {
 
         List<SporPeoper> spor= sporper.getData();
         return ResponseData.success(spor);
+    }
+    /*    根据typeid查询所有的分类数据
+        路径   http://localhost:8080/api/perpor/queryByTypeID
+
+        get请求
+
+              typeid  参数
+
+        返回值   {"code":200,"inif":"提示",data:[{*}]}*/
+    @GetMapping("queryByTypeID")
+    public  ResponseData queryByTypeID(Integer typeId){
+        if(typeId==null){
+            return ResponseData.error(400,"参数不能为空");
+        }
+
+        List<SporPeoper>list=sporper.queryByTypeID(typeId);
+        return ResponseData.success(list);
     }
 }

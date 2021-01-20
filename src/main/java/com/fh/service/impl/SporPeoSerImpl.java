@@ -52,4 +52,10 @@ public class SporPeoSerImpl implements SporPeoSer {
         List<SporPeoper> sp= sporpeDa.getData();
         return sp;
     }
+
+    @Override
+    public List<SporPeoper> queryByTypeID(Integer typeId) {
+        List<SporPeoper> list = sporpeDa.queryByTypeID(typeId);
+        return list;
+    }
 }

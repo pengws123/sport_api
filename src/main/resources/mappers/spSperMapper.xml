@@ -47,4 +47,8 @@
     <select id="getData" resultType="com.fh.entity.po.SporPeoper">
          select * from sp_perpor  where isDel=0
     </select>
+
+    <select id="queryByTypeID" parameterType="int" resultType="com.fh.entity.po.SporPeoper">
+        select * from sp_perpor  where typeId=#{typeId} and  isDel=0
+    </select>
 </mapper>
