@@ -61,4 +61,23 @@ public class ShangPinController {
         shangPinSer.delshangpin(id);
         return ResponseData.success(null);
     }
+
+    /*
+     * 根据Id 查询商品信息
+     * 路径： http://localhost:8080/api/pin/selectshangpin
+     * 请求方式 post
+     *
+     * 参数   id
+     *  SporPeoper   对象
+     *
+     *  返回值  code  info data:{}
+     * */
+    @PostMapping("selectshangpin")
+    public  ResponseData selectshangpin(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+       ShangPin sang= shangPinSer.selectshangpin(id);
+        return ResponseData.success(sang);
+    }
 }

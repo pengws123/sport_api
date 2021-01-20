@@ -22,4 +22,11 @@ public class ShangPinSerImpl implements ShangPinSer {
     public void delshangpin(Integer id) {
         shangPinDao.delshangpin(id);
     }
+
+    @Override
+    public ShangPin selectshangpin(Integer id) {
+        ShangPin san= shangPinDao.selectshangpin(id);
+
+        return san;
+    }
 }

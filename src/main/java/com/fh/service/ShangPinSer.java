@@ -6,4 +6,6 @@ public interface ShangPinSer {
     void savesshangpin(ShangPin shan);
 
     void delshangpin(Integer id);
+
+    ShangPin selectshangpin(Integer id);
 }
