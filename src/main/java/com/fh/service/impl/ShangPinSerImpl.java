@@ -29,4 +29,9 @@ public class ShangPinSerImpl implements ShangPinSer {
 
         return san;
     }
+
+    @Override
+    public void updateshangpin(ShangPin shan) {
+        shangPinDao.updateshangpin(shan);
+    }
 }

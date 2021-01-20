@@ -8,4 +8,6 @@ public interface ShangPinSer {
     void delshangpin(Integer id);
 
     ShangPin selectshangpin(Integer id);
+
+    void updateshangpin(ShangPin shan);
 }

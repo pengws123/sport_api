@@ -80,4 +80,23 @@ public class ShangPinController {
        ShangPin sang= shangPinSer.selectshangpin(id);
         return ResponseData.success(sang);
     }
+    /*
+     * 修改商品信息
+     * 路径： http://localhost:8080/api/pin/updateshangpin
+     * 请求方式 post
+     *
+     *
+     *  SporPeoper   对象
+     *
+     *  返回值  code  info
+     * */
+    @PostMapping("updateshangpin")
+    public  ResponseData updateshangpin(ShangPin shan){
+        if(shan==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+        shan.setUpdateDate(new Date());
+        shangPinSer.updateshangpin(shan);
+        return ResponseData.success(null);
+    }
 }

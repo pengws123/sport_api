@@ -16,4 +16,9 @@
     <select id="selectshangpin" parameterType="int" resultType="com.fh.entity.po.ShangPin">
         select * from sp_sangpin where id=#{id} and isDel=0
     </select>
+
+    <update id="updateshangpin" parameterType="com.fh.entity.po.ShangPin">
+    update  sp_sangpin set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},updateDate=#{updateDate},perporId=#{perporId},imgPath=#{imgPath},author=#{author}
+    where  id=#{id}
+    </update>
     </mapper>
