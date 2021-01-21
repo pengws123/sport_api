@@ -1,15 +1,14 @@
 package com.fh.controller;
 
 import com.fh.entity.po.ShangPin;
+import com.fh.entity.vo.Paramss;
 import com.fh.entity.vo.ResponseData;
 import com.fh.service.ShangPinSer;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -31,14 +30,13 @@ public class ShangPinController {
      * */
 
     @PostMapping("savesshangpin")
-
-    public ResponseData savesshangpin(ShangPin shan){
+    public ResponseData savesshangpin(ShangPin shan ,String attr ,String sku){
         if(shan==null){
             return ResponseData.error(400,"起始小标不能为空");
         }
         shan.setIsDel(0);
         shan.setCreateDate(new Date());
-        shangPinSer.savesshangpin(shan);
+        shangPinSer.savesshangpin(shan,attr,sku);
         return ResponseData.success(null);
     }
 
@@ -98,5 +96,32 @@ public class ShangPinController {
         shan.setUpdateDate(new Date());
         shangPinSer.updateshangpin(shan);
         return ResponseData.success(null);
+    }
+
+    /*
+     * 查询商品名字信息
+     * 路径：  http://localhost:8080/api/pin/queryShang
+     * 请求方式 get
+     *
+     * 参数
+     * start （当前页）  （必选）
+     *
+     * size （每页条数） （必选）
+     *
+     *
+     * 返回值
+     *  code  info   date:{list  count}
+     *
+     * */
+    @GetMapping("queryShang")
+    public ResponseData queryShang(Paramss param){
+        if(param.getStart()==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+        if(param.getSize()==null){
+            return ResponseData.error(400,"每页条数不能为空");
+        }
+        Map map = shangPinSer.queryShang(param);
+        return ResponseData.success(map);
     }
 }

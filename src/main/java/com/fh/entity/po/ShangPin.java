@@ -103,6 +103,22 @@ public class ShangPin {
         this.createDate = createDate;
     }
 
+    public Integer getPerporId() {
+        return perporId;
+    }
+
+    public void setPerporId(Integer perporId) {
+        this.perporId = perporId;
+    }
+
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     public Date getUpdateDate() {
         return updateDate;
     }
@@ -125,21 +141,5 @@ public class ShangPin {
 
     public void setIsDel(int isDel) {
         this.isDel = isDel;
-    }
-
-    public String getImgPath() {
-        return imgPath;
-    }
-
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
-    }
-
-    public Integer getPerporId() {
-        return perporId;
-    }
-
-    public void setPerporId(Integer perporId) {
-        this.perporId = perporId;
     }
 }
