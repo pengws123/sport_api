@@ -90,4 +90,11 @@ public class ShangPinSerImpl implements ShangPinSer {
 
         return rs;
     }
+
+    @Override
+    public List<Productvalue> selectByPerId(Integer proId) {
+        List<Productvalue> list = productvalueDao.selectByPerId(proId);
+
+        return list;
+    }
 }

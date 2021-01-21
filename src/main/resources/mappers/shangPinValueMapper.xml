@@ -12,4 +12,9 @@
     </foreach>
 
 </insert>
+
+    <select id="selectByPerId" resultType="com.fh.entity.po.Productvalue" parameterType="int">
+
+        select * from sp_produvalue where  proId=#{proId}
+    </select>
     </mapper>

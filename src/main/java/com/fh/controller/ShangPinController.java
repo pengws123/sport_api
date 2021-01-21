@@ -1,5 +1,6 @@
 package com.fh.controller;
 
+import com.fh.entity.po.Productvalue;
 import com.fh.entity.po.ShangPin;
 import com.fh.entity.vo.Paramss;
 import com.fh.entity.vo.ResponseData;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -43,7 +45,7 @@ public class ShangPinController {
     /*
      * 删除商品信息
      * 路径： http://localhost:8080/api/pin/delshangpin
-     * 请求方式 post
+     * 请求方式 get
      *
      * 参数   id
      *  SporPeoper   对象
@@ -51,7 +53,7 @@ public class ShangPinController {
      *  返回值  code  info
      * */
 
-    @PostMapping("delshangpin")
+    @GetMapping("delshangpin")
     public ResponseData delshangpin(Integer id){
         if(id==null){
             return ResponseData.error(400,"起始小标不能为空");
@@ -123,5 +125,22 @@ public class ShangPinController {
         }
         Map map = shangPinSer.queryShang(param);
         return ResponseData.success(map);
+    }
+    /* 查询指定proId的数据
+
+        路径    http://localhost:8080/api/pin/selectByPerId
+
+        get请求
+
+        参数    proId
+
+        返回值   {"code":200,"inif":"提示",data:[{*}]}*/
+    @GetMapping("selectByPerId")
+    public ResponseData selectByPerId (Integer proId){
+        if (proId==null){
+            return ResponseData.error(400,"pid没有值");
+        }
+        List<Productvalue> spor= shangPinSer.selectByPerId(proId);
+        return ResponseData.success(spor);
     }
 }
