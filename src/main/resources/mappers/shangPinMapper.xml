@@ -10,11 +10,11 @@
     </select>
 
     <select id="queryShang" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.ShangPin">
-        select * from sp_sangpin where 1=1 and isDel=0 limit ${size*(start-1)},#{size}
+        select * from sp_sangpin where 1=1 and isDel=0  order by id desc  limit ${size*(start-1)},#{size}
     </select>
     <insert id="savesshangpin" parameterType="com.fh.entity.po.ShangPin" keyProperty="id" useGeneratedKeys="true">
-        insert into sp_sangpin (name,title,bandId,productdecs,price,stocks,sortNum,createDate,perporId,imgPath,author,isDel) value
-        (#{name},#{title},#{bandId},#{productdecs},#{price},#{stocks},#{sortNum},#{createDate},#{perporId},#{imgPath},#{author},#{isDel})
+        insert into sp_sangpin (name,title,bandId,productdecs,price,stocks,sortNum,createDate,typeId,imgPath,author,isDel) value
+        (#{name},#{title},#{bandId},#{productdecs},#{price},#{stocks},#{sortNum},#{createDate},#{typeId},#{imgPath},#{author},#{isDel})
     </insert>
 
     <update id="delshangpin" parameterType="int">
@@ -26,7 +26,7 @@
     </select>
 
     <update id="updateshangpin" parameterType="com.fh.entity.po.ShangPin">
-    update  sp_sangpin set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},updateDate=#{updateDate},perporId=#{perporId},imgPath=#{imgPath},author=#{author}
+    update  sp_sangpin set name=#{name},title=#{title},bandId=#{bandId},productdecs=#{productdecs},price=#{price},stocks=#{stocks},sortNum=#{sortNum},updateDate=#{updateDate},typeId=#{typeId},imgPath=#{imgPath},author=#{author}
     where  id=#{id}
     </update>
     </mapper>

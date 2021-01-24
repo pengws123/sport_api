@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 public class SporPeoper {
 
@@ -20,6 +21,9 @@ public class SporPeoper {
   private Integer  isSKU ;//  是否为sku属性
 
   private Integer  isDel  ;//  逻辑删除
+
+  private List<SxValue> values;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
   private Date createDate;//
@@ -108,4 +112,14 @@ public class SporPeoper {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public List<SxValue> getValues() {
+        return values;
+    }
+
+    public void setValues(List<SxValue> values) {
+        this.values = values;
+    }
+
+
 }

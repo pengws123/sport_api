@@ -22,4 +22,8 @@
     <update id="updatexvalue" parameterType="com.fh.entity.po.SxValue">
         update sp_sxvalue set name=#{name},nameCH=#{nameCH} where id=#{id}
     </update>
+
+    <select id="selectByIds" parameterType="int" resultType="com.fh.entity.po.SxValue">
+        select * from sp_sxvalue where attId=#{id}
+    </select>
 </mapper>

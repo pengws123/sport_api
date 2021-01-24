@@ -25,7 +25,7 @@ public class ShangPin {
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
  private Date createDate;//
 
- private  Integer  perporId;
+ private  Integer  typeId;
 
  private String imgPath;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -108,12 +108,12 @@ public class ShangPin {
         this.createDate = createDate;
     }
 
-    public Integer getPerporId() {
-        return perporId;
+    public Integer getTypeId() {
+        return typeId;
     }
 
-    public void setPerporId(Integer perporId) {
-        this.perporId = perporId;
+    public void setTypeId(Integer typeId) {
+        this.typeId = typeId;
     }
 
     public String getImgPath() {

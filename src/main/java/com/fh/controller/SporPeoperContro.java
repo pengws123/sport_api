@@ -158,4 +158,23 @@ public class SporPeoperContro {
         List<SporPeoper>list=sporper.queryByTypeID(typeId);
         return ResponseData.success(list);
     }
+
+     /*    根据typeid查询所有的分类数据
+        路径   http://localhost:8080/api/perpor/queryByTypeIds
+
+        get请求
+
+              typeid  参数
+
+        返回值   {"code":200,"inif":"提示",data:[{*}]}*/
+
+     @GetMapping("queryByTypeIds")
+    public  ResponseData queryByTypeIds(Integer typeId){
+         if(typeId==null){
+             return ResponseData.error(400,"参数不能为空");
+         }
+
+         Map list=sporper.queryByTypeIds(typeId);
+         return ResponseData.success(list);
+     }
 }

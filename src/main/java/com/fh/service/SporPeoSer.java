@@ -20,4 +20,6 @@ public interface SporPeoSer {
     List<SporPeoper> getData();
 
     List<SporPeoper> queryByTypeID(Integer typeId);
+
+    Map queryByTypeIds(Integer typeId);
 }
