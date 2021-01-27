@@ -143,4 +143,22 @@ public class ShangPinController {
         List<Productvalue> spor= shangPinSer.selectByPerId(proId);
         return ResponseData.success(spor);
     }
+     /* 查询指定proId的数据
+
+        路径    http://localhost:8080/api/pin/selectSkuByProId
+
+        get请求
+
+        参数    proId
+
+        返回值   {"code":200,"inif":"提示",data:[{*}]}*/
+
+     @GetMapping("selectSkuByProId")
+    public  ResponseData selectSkuByProId (Integer proId){
+         if (proId==null){
+             return ResponseData.error(400,"pid没有值");
+         }
+         Map spor= shangPinSer.selectSkuByProId(proId);
+         return ResponseData.success(spor);
+     }
 }

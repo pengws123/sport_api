@@ -20,4 +20,6 @@ public interface ShangPinSer {
     Map queryShang(Paramss param);
 
     List<Productvalue> selectByPerId(Integer proId);
+
+    Map selectSkuByProId(Integer proId);
 }
