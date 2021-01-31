@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 @CrossOrigin
@@ -51,6 +52,7 @@ public class UserPassController {
          if (user==null){
              return ResponseData.error(400,"spo没有值");
          }
+         user.setCreateDate(new Date());
          Map map=userser.saveuser(user);
          return ResponseData.success(map);
      }
