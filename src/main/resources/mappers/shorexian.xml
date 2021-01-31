@@ -18,4 +18,8 @@
     <update id="deleteshore" parameterType="int">
         update sp_shorexian set isDel=1 where id=#{id}
     </update>
+
+    <select id="queryshoreId" parameterType="int" resultType="com.fh.entity.po.ShoreXian">
+        select * from  sp_shorexian where isDel=0 and id=#{id}
+    </select>
     </mapper>

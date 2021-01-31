@@ -10,4 +10,6 @@ public interface ShoreDao {
     void saveshore(ShoreXian shore);
 
     void deleteshore(Integer id);
+
+    ShoreXian queryshoreId(Integer id);
 }

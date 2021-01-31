@@ -64,4 +64,21 @@ public class ShoreController {
           shoreser.deleteshore(id);
           return ResponseData.success(null);
       }
+          /*1    根据Id查询用户权限的方法
+    路径   localhost:8080/api/xian/queryshoreId
+
+    post请求
+
+        id      参数
+
+    返回值   {"code":200,"inif":"提示",data:[{*}]}
+    */
+    @PostMapping("queryshoreId")
+    private ResponseData queryshoreId(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"id没有值");
+        }
+        ShoreXian shor=shoreser.queryshoreId(id);
+        return ResponseData.success(shor);
+    }
 }
