@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface Shoreser {
     List<ShoreXian> getshore();
+
+    void saveshore(ShoreXian shore);
 }

@@ -19,4 +19,9 @@ public class ShoreserImpl implements Shoreser {
         List<ShoreXian> list=shoreDao.getshore();
         return list;
     }
+
+    @Override
+    public void saveshore(ShoreXian shore) {
+        shoreDao.saveshore(shore);
+    }
 }

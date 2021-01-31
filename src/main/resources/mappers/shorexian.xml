@@ -8,4 +8,10 @@
     <select id="getshore" resultType="com.fh.entity.po.ShoreXian">
         select * from  sp_shorexian where isDel=0
     </select>
+
+    <insert id="saveshore" parameterType="com.fh.entity.po.ShoreXian">
+        insert  into  sp_shorexian (pid,name,url,type,isDel,createDate,author)
+         value
+         (#{pid},#{name},#{url},#{type},#{isDel},#{createDate},#{author})
+    </insert>
     </mapper>
