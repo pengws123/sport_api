@@ -35,4 +35,9 @@ public class ShoreserImpl implements Shoreser {
         ShoreXian shore =shoreDao.queryshoreId(id);
         return shore;
     }
+
+    @Override
+    public void updateshore(ShoreXian shore) {
+        shoreDao.updateshore(shore);
+    }
 }

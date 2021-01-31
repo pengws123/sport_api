@@ -16,6 +16,9 @@ public class ShoreXian {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date createDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    private Date updateDate;
     private  String author;
 
     public Integer getId() {
@@ -80,5 +83,13 @@ public class ShoreXian {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 }

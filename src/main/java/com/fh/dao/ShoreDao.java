@@ -12,4 +12,6 @@ public interface ShoreDao {
     void deleteshore(Integer id);
 
     ShoreXian queryshoreId(Integer id);
+
+    void updateshore(ShoreXian shore);
 }

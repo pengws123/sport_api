@@ -81,4 +81,22 @@ public class ShoreController {
         ShoreXian shor=shoreser.queryshoreId(id);
         return ResponseData.success(shor);
     }
+          /*    修改用户权限的方法
+    路径   localhost:8080/api/xian/updateshore
+
+    post请求
+
+        Shoexian    对象   参数
+
+    返回值   {"code":200,"inif":"提示",data:[{*}]}
+    */
+    @PostMapping("updateshore")
+    private ResponseData updateshore(ShoreXian shore){
+        if(shore==null){
+            return ResponseData.error(400,"shore没有值");
+        }
+        shore.setUpdateDate(new Date());
+        shoreser.updateshore(shore);
+        return ResponseData.success(null);
+    }
 }

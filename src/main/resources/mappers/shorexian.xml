@@ -22,4 +22,8 @@
     <select id="queryshoreId" parameterType="int" resultType="com.fh.entity.po.ShoreXian">
         select * from  sp_shorexian where isDel=0 and id=#{id}
     </select>
+
+    <update id="updateshore" parameterType="com.fh.entity.po.ShoreXian">
+         update sp_shorexian set pid=#{pid},name=#{name},url=#{url},type=#{type},updateDate=#{updateDate},author=#{author} where id=#{id}
+    </update>
     </mapper>
