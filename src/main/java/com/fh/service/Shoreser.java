@@ -8,4 +8,6 @@ public interface Shoreser {
     List<ShoreXian> getshore();
 
     void saveshore(ShoreXian shore);
+
+    void deleteshore(Integer id);
 }

@@ -40,11 +40,28 @@ public class ShoreController {
      @PostMapping("saveshore")
     private  ResponseData saveshore(ShoreXian shore){
          if(shore==null){
-             return ResponseData.error(400,"pid没有值");
+             return ResponseData.error(400,"shore没有值");
          }
          shore.setIsDel(0);
          shore.setCreateDate(new Date());
          shoreser.saveshore(shore);
          return ResponseData.success(null);
      }
+      /*1    删除用户权限的方法
+    路径   localhost:8080/api/xian/deleteshore
+
+    post请求
+
+        id      参数
+
+    返回值   无
+    */
+      @PostMapping("deleteshore")
+    private ResponseData deleteshore(Integer id){
+          if(id==null){
+              return ResponseData.error(400,"id没有值");
+          }
+          shoreser.deleteshore(id);
+          return ResponseData.success(null);
+      }
 }

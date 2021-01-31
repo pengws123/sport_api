@@ -8,4 +8,6 @@ public interface ShoreDao {
     List<ShoreXian> getshore();
 
     void saveshore(ShoreXian shore);
+
+    void deleteshore(Integer id);
 }

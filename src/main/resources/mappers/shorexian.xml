@@ -14,4 +14,8 @@
          value
          (#{pid},#{name},#{url},#{type},#{isDel},#{createDate},#{author})
     </insert>
+
+    <update id="deleteshore" parameterType="int">
+        update sp_shorexian set isDel=1 where id=#{id}
+    </update>
     </mapper>

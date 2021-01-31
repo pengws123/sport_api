@@ -24,4 +24,9 @@ public class ShoreserImpl implements Shoreser {
     public void saveshore(ShoreXian shore) {
         shoreDao.saveshore(shore);
     }
+
+    @Override
+    public void deleteshore(Integer id) {
+        shoreDao.deleteshore(id);
+    }
 }
