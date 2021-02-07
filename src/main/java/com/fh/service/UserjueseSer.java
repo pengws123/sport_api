@@ -13,4 +13,6 @@ public interface UserjueseSer {
     void deletejuese(Integer id);
 
     Userjuese selectjuese(Integer id);
+
+    void updatejuese(Userjuese juese);
 }

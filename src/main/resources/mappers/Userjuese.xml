@@ -25,4 +25,8 @@
     <select id="selectjuese" parameterType="int" resultType="com.fh.entity.po.Userjuese">
         select * from sp_userjuese where 1=1 and isDel=0 and id=#{id}
     </select>
+
+    <update id="updatejuese" parameterType="com.fh.entity.po.Userjuese">
+        update sp_userjuese set name=#{name},updateDate=#{updateDate} where id=#{id}
+    </update>
 </mapper>

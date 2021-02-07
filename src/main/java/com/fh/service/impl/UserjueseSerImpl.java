@@ -42,4 +42,9 @@ public class UserjueseSerImpl implements UserjueseSer {
         Userjuese juese=userjueseDao.selectjuese(id);
         return juese;
     }
+
+    @Override
+    public void updatejuese(Userjuese juese) {
+        userjueseDao.updatejuese(juese);
+    }
 }

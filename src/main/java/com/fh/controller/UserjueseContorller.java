@@ -106,4 +106,25 @@ public class UserjueseContorller {
          Userjuese juese=userjueseSer.selectjuese(id);
         return ResponseData.success(juese);
     }
+    /*
+     * 新增角色信息
+     * 路径： http://localhost:8080/api/userjuese/updatejuese
+     * 请求方式 get
+     *
+     * 参数
+     * Userjuese
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("updatejuese")
+    private ResponseData updatejuese(Userjuese juese){
+        if(juese==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+        juese.setUpdateDate(new Date());
+        userjueseSer.updatejuese(juese);
+        return ResponseData.success(null);
+    }
 }
