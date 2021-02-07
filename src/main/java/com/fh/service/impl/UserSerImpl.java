@@ -9,6 +9,7 @@ import com.fh.service.UserSer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -89,5 +90,19 @@ public class UserSerImpl implements UserSer {
     public List<Juese> queryuserjue(Integer uid) {
         List<Juese> list=jueseDao.queryuserjue(uid);
         return list;
+    }
+
+    @Override
+    public void saveuserjue(Integer uid,String rid) {
+    List<Juese> list = new ArrayList<>();
+        jueseDao.deletejuese(uid);
+        String[] split = rid.split(",");
+        for (int i = 0; i <split.length ; i++) {
+            Juese ro=new Juese();
+            ro.setUid(uid);
+            ro.setRid(Integer.parseInt(split[i]));
+            list.add(ro);
+        }
+        jueseDao.saveuserjue(list);
     }
 }

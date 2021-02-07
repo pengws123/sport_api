@@ -163,4 +163,26 @@ public class UserPassController {
         List<Juese> map = userser.queryuserjue(uid);
         return ResponseData.success(map);
     }
+    /*
+     * 用户授角色信息
+     * 路径： http://localhost:8080/api/user/saveuserjue
+     * 请求方式 post
+     *
+     * 参数   Juese
+     *
+     * 返回值
+     *  code  info
+     *
+     * */
+    @PostMapping("saveuserjue")
+    private ResponseData saveuserjue(Integer uid,String rid){
+        if(uid==null){
+            return ResponseData.error(400,"juese不能为空");
+        }
+        if(rid==null){
+            return ResponseData.error(400,"juese不能为空");
+        }
+          userser.saveuserjue(uid,rid);
+        return ResponseData.success(null);
+    }
 }

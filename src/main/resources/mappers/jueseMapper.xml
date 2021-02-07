@@ -5,8 +5,18 @@
 
     <mapper namespace="com.fh.dao.JueseDao">
 
-    <select id="queryuserjue" parameterType="com.fh.entity.vo.Paramss" resultType="int">
-        select * from sp_juese
+    <select id="queryuserjue" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.Juese">
+        select uid,rid from sp_juese where uid=#{uid}
     </select>
 
+    <delete id="deletejuese" parameterType="int">
+        delete from sp_juese where uid=#{uid}
+    </delete>
+
+    <insert id="saveuserjue" parameterType="java.util.List">
+        insert  into sp_juese (uid,rid) values
+        <foreach collection="list" item="ur" separator=",">
+            (#{ur.uid},#{ur.rid})
+        </foreach>
+    </insert>
     </mapper>

@@ -22,4 +22,6 @@ public interface UserSer {
     void updateuser(UserParss user);
 
     List<Juese> queryuserjue(Integer uid);
+
+    void saveuserjue(Integer uid,String rid);
 }

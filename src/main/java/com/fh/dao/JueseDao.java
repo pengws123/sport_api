@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface JueseDao {
     List<Juese> queryuserjue(Integer uid);
+
+    void deletejuese(Integer uid);
+
+    void saveuserjue(List<Juese> list);
 }
