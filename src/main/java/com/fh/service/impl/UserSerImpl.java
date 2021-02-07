@@ -61,8 +61,13 @@ public class UserSerImpl implements UserSer {
         Map rs =new HashMap();
         Integer count=userDao.querycount(param);
         rs.put("count",count);
-        List<SporPeoper> list = userDao.queryuser(param);
+        List<UserParss> list = userDao.queryuser(param);
         rs.put("list",list);
         return rs;
+    }
+
+    @Override
+    public void deleteuser(Integer id) {
+        userDao.deleteuser(id);
     }
 }

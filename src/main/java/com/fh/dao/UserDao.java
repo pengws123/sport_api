@@ -13,5 +13,7 @@ public interface UserDao {
 
     Integer querycount(Paramss param);
 
-    List<SporPeoper> queryuser(Paramss param);
+    List<UserParss> queryuser(Paramss param);
+
+    void deleteuser(Integer id);
 }

@@ -7,12 +7,12 @@
 
     <select id="querycount" parameterType="com.fh.entity.vo.Paramss" resultType="int" >
 
-        select count(*) from sp_user where 1=1 and  isDel=0
+        select count(*) from sp_user
     </select>
 
-    <select id="queryjuese" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.UserParss">
+    <select id="queryuser" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.UserParss">
 
-        select * from sp_user where 1=1 and  isDel=0  limit ${size*(start-1)},#{size}
+        select * from sp_user  limit ${size*(start-1)},#{size}
     </select>
 
 
@@ -26,4 +26,8 @@
          value
         (#{name},#{realName},#{password},#{sex},#{phone},#{email},#{idCard},#{birthday},#{imgUrl},#{eduId},#{deprId},#{createDate})
     </insert>
+
+    <delete id="deleteuser" parameterType="int">
+        delete from sp_user where id=#{id}
+    </delete>
     </mapper>

@@ -82,4 +82,24 @@ public class UserPassController {
         Map map = userser.queryuser(param);
         return ResponseData.success(map);
     }
+    /*
+     * 删除角色信息
+     * 路径： http://localhost:8080/api/user/deleteuser
+     * 请求方式 get
+     *
+     * 参数
+     * id
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("deleteuser")
+    private ResponseData deleteuser(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"id不能为空");
+        }
+        userser.deleteuser(id);
+        return ResponseData.success(null);
+    }
 }

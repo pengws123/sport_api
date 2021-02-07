@@ -12,4 +12,6 @@ public interface UserSer {
     Map saveuser(UserParss user);
 
     Map queryuser(Paramss param);
+
+    void deleteuser(Integer id);
 }
