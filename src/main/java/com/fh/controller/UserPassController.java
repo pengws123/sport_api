@@ -1,13 +1,11 @@
 package com.fh.controller;
 
 import com.fh.entity.po.UserParss;
+import com.fh.entity.vo.Paramss;
 import com.fh.entity.vo.ResponseData;
 import com.fh.entity.vo.UserParams;
 import com.fh.service.UserSer;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -56,4 +54,32 @@ public class UserPassController {
          Map map=userser.saveuser(user);
          return ResponseData.success(map);
      }
+    /*
+     * 查询用户信息
+     * 路径： http://localhost:8080/api/user/queryuser
+     * 请求方式 get
+     *
+     * 参数
+     *
+     *
+     *
+     * start （当前页）  （必选）
+     *
+     * size （每页条数） （必选）
+     *
+     * 返回值
+     *  code  info   date:{list  count}
+     *
+     * */
+    @GetMapping("queryuser")
+    private ResponseData queryuser (Paramss param){
+        if(param.getStart()==null){
+            return ResponseData.error(400,"起始小标不能为空");
+        }
+        if(param.getSize()==null){
+            return ResponseData.error(400,"每页条数不能为空");
+        }
+        Map map = userser.queryuser(param);
+        return ResponseData.success(map);
+    }
 }

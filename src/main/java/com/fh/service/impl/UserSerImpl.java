@@ -1,12 +1,15 @@
 package com.fh.service.impl;
 
 import com.fh.dao.UserDao;
+import com.fh.entity.po.SporPeoper;
 import com.fh.entity.po.UserParss;
+import com.fh.entity.vo.Paramss;
 import com.fh.service.UserSer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -51,5 +54,15 @@ public class UserSerImpl implements UserSer {
             map.put("mags",2);
         }
         return map;
+    }
+
+    @Override
+    public Map queryuser(Paramss param) {
+        Map rs =new HashMap();
+        Integer count=userDao.querycount(param);
+        rs.put("count",count);
+        List<SporPeoper> list = userDao.queryuser(param);
+        rs.put("list",list);
+        return rs;
     }
 }

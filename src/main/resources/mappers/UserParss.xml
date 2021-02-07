@@ -5,6 +5,17 @@
 
     <mapper namespace="com.fh.dao.UserDao">
 
+    <select id="querycount" parameterType="com.fh.entity.vo.Paramss" resultType="int" >
+
+        select count(*) from sp_user where 1=1 and  isDel=0
+    </select>
+
+    <select id="queryjuese" parameterType="com.fh.entity.vo.Paramss" resultType="com.fh.entity.po.UserParss">
+
+        select * from sp_user where 1=1 and  isDel=0  limit ${size*(start-1)},#{size}
+    </select>
+
+
     <select id="loginuser" parameterType="java.lang.String" resultType="com.fh.entity.po.UserParss">
         select realName,password from sp_user where 1=1 and  realName=#{realName}
     </select>

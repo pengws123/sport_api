@@ -1,6 +1,7 @@
 package com.fh.service;
 
 import com.fh.entity.po.UserParss;
+import com.fh.entity.vo.Paramss;
 
 import java.util.Map;
 
@@ -9,4 +10,6 @@ public interface UserSer {
 
 
     Map saveuser(UserParss user);
+
+    Map queryuser(Paramss param);
 }
