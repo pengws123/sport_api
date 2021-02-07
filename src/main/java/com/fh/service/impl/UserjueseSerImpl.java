@@ -36,4 +36,10 @@ public class UserjueseSerImpl implements UserjueseSer {
     public void deletejuese(Integer id) {
         userjueseDao.deletejuese(id);
     }
+
+    @Override
+    public Userjuese selectjuese(Integer id) {
+        Userjuese juese=userjueseDao.selectjuese(id);
+        return juese;
+    }
 }

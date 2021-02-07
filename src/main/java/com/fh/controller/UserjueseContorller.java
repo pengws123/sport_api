@@ -86,4 +86,24 @@ public class UserjueseContorller {
         userjueseSer.deletejuese(id);
         return ResponseData.success(null);
     }
+    /*
+     * 根据id查询角色信息
+     * 路径： http://localhost:8080/api/userjuese/selectjuese
+     * 请求方式 get
+     *
+     * 参数
+     * id
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("selectjuese")
+    private ResponseData selectjuese(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"id不能为空");
+        }
+         Userjuese juese=userjueseSer.selectjuese(id);
+        return ResponseData.success(juese);
+    }
 }

@@ -14,4 +14,6 @@ public interface UserjueseDao {
     void savejuese(Userjuese juese);
 
     void deletejuese(Integer id);
+
+    Userjuese selectjuese(Integer id);
 }

@@ -21,4 +21,8 @@
     <update id="deletejuese" parameterType="int">
         update sp_userjuese set isDel=1 where id=#{id}
     </update>
+
+    <select id="selectjuese" parameterType="int" resultType="com.fh.entity.po.Userjuese">
+        select * from sp_userjuese where 1=1 and isDel=0 and id=#{id}
+    </select>
 </mapper>
