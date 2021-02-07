@@ -3,7 +3,6 @@ package com.fh.controller;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 import com.fh.entity.vo.ResponseData;
-import com.fh.entity.vo.UserParams;
 import com.fh.service.UserSer;
 import org.springframework.web.bind.annotation.*;
 
@@ -101,5 +100,25 @@ public class UserPassController {
         }
         userser.deleteuser(id);
         return ResponseData.success(null);
+    }
+    /*
+     * 根据id查询角色信息
+     * 路径： http://localhost:8080/api/user/selectuser
+     * 请求方式 get
+     *
+     * 参数
+     * id
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("selectuser")
+    private ResponseData selectuser(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"id不能为空");
+        }
+        UserParss user=userser.selectuser(id);
+        return ResponseData.success(user);
     }
 }

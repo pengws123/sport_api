@@ -70,4 +70,10 @@ public class UserSerImpl implements UserSer {
     public void deleteuser(Integer id) {
         userDao.deleteuser(id);
     }
+
+    @Override
+    public UserParss selectuser(Integer id) {
+        UserParss user =userDao.selectuser(id);
+        return user;
+    }
 }

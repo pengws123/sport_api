@@ -16,4 +16,6 @@ public interface UserDao {
     List<UserParss> queryuser(Paramss param);
 
     void deleteuser(Integer id);
+
+    UserParss selectuser(Integer id);
 }

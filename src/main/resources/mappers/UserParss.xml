@@ -30,4 +30,8 @@
     <delete id="deleteuser" parameterType="int">
         delete from sp_user where id=#{id}
     </delete>
+
+    <select id="selectuser" parameterType="int" resultType="com.fh.entity.po.UserParss">
+        select * from sp_user where 1=1  and id=#{id}
+    </select>
     </mapper>
