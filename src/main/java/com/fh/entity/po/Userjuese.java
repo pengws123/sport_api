@@ -7,7 +7,16 @@ public class Userjuese {
     private  String name;
     private Integer isDel;
     private Date createDate;
+    private Date updateDate;
     private String author;
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
 
     public Integer getId() {
         return id;

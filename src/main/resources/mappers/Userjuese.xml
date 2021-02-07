@@ -14,4 +14,7 @@
         select * from sp_userjuese where 1=1 and  isDel=0  limit ${size*(start-1)},#{size}
     </select>
 
+    <insert id="savejuese" parameterType="com.fh.entity.po.Userjuese">
+        insert into sp_userjuese (name,isDel,createDate,author) value (#{name},#{isDel},#{createDate},#{author})
+    </insert>
 </mapper>

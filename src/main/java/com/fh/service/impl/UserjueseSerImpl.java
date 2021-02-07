@@ -2,6 +2,7 @@ package com.fh.service.impl;
 
 import com.fh.dao.UserjueseDao;
 import com.fh.entity.po.SporPeoper;
+import com.fh.entity.po.Userjuese;
 import com.fh.entity.vo.Paramss;
 import com.fh.service.UserjueseSer;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,10 @@ public class UserjueseSerImpl implements UserjueseSer {
         List<SporPeoper> list = userjueseDao.queryjuese(param);
         rs.put("list",list);
         return rs;
+    }
+
+    @Override
+    public void savejuese(Userjuese juese) {
+        userjueseDao.savejuese(juese);
     }
 }
