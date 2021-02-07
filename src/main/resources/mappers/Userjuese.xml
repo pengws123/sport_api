@@ -17,4 +17,8 @@
     <insert id="savejuese" parameterType="com.fh.entity.po.Userjuese">
         insert into sp_userjuese (name,isDel,createDate,author) value (#{name},#{isDel},#{createDate},#{author})
     </insert>
+
+    <update id="deletejuese" parameterType="int">
+        update sp_userjuese set isDel=1 where id=#{id}
+    </update>
 </mapper>

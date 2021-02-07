@@ -9,4 +9,6 @@ public interface UserjueseSer {
     Map queryspoper(Paramss param);
 
     void savejuese(Userjuese juese);
+
+    void deletejuese(Integer id);
 }

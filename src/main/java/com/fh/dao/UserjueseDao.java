@@ -12,4 +12,6 @@ public interface UserjueseDao {
     List<SporPeoper> queryjuese(Paramss param);
 
     void savejuese(Userjuese juese);
+
+    void deletejuese(Integer id);
 }

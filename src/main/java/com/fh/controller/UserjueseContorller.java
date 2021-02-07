@@ -66,4 +66,24 @@ public class UserjueseContorller {
         userjueseSer.savejuese(juese);
         return ResponseData.success(null);
     }
+    /*
+     * 删除角色信息
+     * 路径： http://localhost:8080/api/userjuese/deletejuese
+     * 请求方式 get
+     *
+     * 参数
+     * id
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("deletejuese")
+    private ResponseData deletejuese(Integer id){
+        if(id==null){
+            return ResponseData.error(400,"id不能为空");
+        }
+        userjueseSer.deletejuese(id);
+        return ResponseData.success(null);
+    }
 }
