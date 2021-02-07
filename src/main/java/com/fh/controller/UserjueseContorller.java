@@ -127,4 +127,5 @@ public class UserjueseContorller {
         userjueseSer.updatejuese(juese);
         return ResponseData.success(null);
     }
+
 }

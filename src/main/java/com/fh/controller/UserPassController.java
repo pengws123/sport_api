@@ -1,5 +1,6 @@
 package com.fh.controller;
 
+import com.fh.entity.po.Juese;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 import com.fh.entity.vo.ResponseData;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
@@ -141,5 +143,24 @@ public class UserPassController {
         user.setUpdateDate(new Date());
         userser.updateuser(user);
         return ResponseData.success(null);
+    }
+    /*
+     * 查询用户角色信息
+     * 路径： http://localhost:8080/api/user/queryuserjue
+     * 请求方式 post
+     *
+     * 参数   uid
+     *
+     * 返回值
+     *  code  info   date:{list  count}
+     *
+     * */
+    @PostMapping("queryuserjue")
+    private ResponseData queryuserjue (Integer uid){
+        if(uid==null){
+            return ResponseData.error(400,"uid不能为空");
+        }
+        List<Juese> map = userser.queryuserjue(uid);
+        return ResponseData.success(map);
     }
 }

@@ -1,6 +1,8 @@
 package com.fh.service.impl;
 
+import com.fh.dao.JueseDao;
 import com.fh.dao.UserDao;
+import com.fh.entity.po.Juese;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 import com.fh.service.UserSer;
@@ -17,6 +19,8 @@ public class UserSerImpl implements UserSer {
     @Resource
     private UserDao userDao;
 
+    @Resource
+    private JueseDao jueseDao;
     @Override
     public Map loginuser(UserParss user) {
 
@@ -79,5 +83,11 @@ public class UserSerImpl implements UserSer {
     @Override
     public void updateuser(UserParss user) {
         userDao.updateuser(user);
+    }
+
+    @Override
+    public List<Juese> queryuserjue(Integer uid) {
+        List<Juese> list=jueseDao.queryuserjue(uid);
+        return list;
     }
 }
