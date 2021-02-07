@@ -1,7 +1,6 @@
 package com.fh.service.impl;
 
 import com.fh.dao.UserDao;
-import com.fh.entity.po.SporPeoper;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 import com.fh.service.UserSer;
@@ -75,5 +74,10 @@ public class UserSerImpl implements UserSer {
     public UserParss selectuser(Integer id) {
         UserParss user =userDao.selectuser(id);
         return user;
+    }
+
+    @Override
+    public void updateuser(UserParss user) {
+        userDao.updateuser(user);
     }
 }

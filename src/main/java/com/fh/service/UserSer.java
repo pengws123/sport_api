@@ -16,4 +16,6 @@ public interface UserSer {
     void deleteuser(Integer id);
 
     UserParss selectuser(Integer id);
+
+    void updateuser(UserParss user);
 }

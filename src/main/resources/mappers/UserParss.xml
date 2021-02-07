@@ -34,4 +34,9 @@
     <select id="selectuser" parameterType="int" resultType="com.fh.entity.po.UserParss">
         select * from sp_user where 1=1  and id=#{id}
     </select>
+
+    <update id="updateuser" parameterType="com.fh.entity.po.UserParss">
+        update sp_user set name=#{name},sex=#{sex},phone=#{phone},email=#{email},idCard=#{idCard},birthday=#{birthday},imgUrl=#{imgUrl},eduId=#{eduId},deprId=#{deprId},updateDate=#{updateDate}
+        where id=#{id}
+    </update>
     </mapper>

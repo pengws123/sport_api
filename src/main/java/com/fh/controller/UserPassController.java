@@ -121,4 +121,25 @@ public class UserPassController {
         UserParss user=userser.selectuser(id);
         return ResponseData.success(user);
     }
+    /*
+     *修改用户信息
+     * 路径： http://localhost:8080/api/user/updateuser
+     * 请求方式 post
+     *
+     * 参数
+     * Userjuese
+     *
+     * 返回值
+     *  code  info   无
+     *
+     * */
+    @PostMapping("updateuser")
+    private ResponseData updateuser(UserParss user){
+        if(user==null){
+            return ResponseData.error(400,"对象不能为空");
+        }
+        user.setUpdateDate(new Date());
+        userser.updateuser(user);
+        return ResponseData.success(null);
+    }
 }

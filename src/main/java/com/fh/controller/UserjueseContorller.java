@@ -107,7 +107,7 @@ public class UserjueseContorller {
         return ResponseData.success(juese);
     }
     /*
-     * 新增角色信息
+     *修改角色信息
      * 路径： http://localhost:8080/api/userjuese/updatejuese
      * 请求方式 get
      *

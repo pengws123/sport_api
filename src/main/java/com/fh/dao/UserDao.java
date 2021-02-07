@@ -1,6 +1,5 @@
 package com.fh.dao;
 
-import com.fh.entity.po.SporPeoper;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 
@@ -18,4 +17,6 @@ public interface UserDao {
     void deleteuser(Integer id);
 
     UserParss selectuser(Integer id);
+
+    void updateuser(UserParss user);
 }
