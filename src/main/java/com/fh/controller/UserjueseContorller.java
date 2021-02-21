@@ -34,7 +34,7 @@ public class UserjueseContorller {
      *
      * */
     @GetMapping("queryjuese")
-    private ResponseData queryjuese (Paramss param){
+    public ResponseData queryjuese (Paramss param){
         if(param.getStart()==null){
             return ResponseData.error(400,"起始小标不能为空");
         }
@@ -57,7 +57,7 @@ public class UserjueseContorller {
      *
      * */
     @PostMapping("savejuese")
-    private ResponseData savejuese(Userjuese juese){
+    public ResponseData savejuese(Userjuese juese){
         if(juese==null){
             return ResponseData.error(400,"起始小标不能为空");
         }
@@ -79,7 +79,7 @@ public class UserjueseContorller {
      *
      * */
     @PostMapping("deletejuese")
-    private ResponseData deletejuese(Integer id){
+    public ResponseData deletejuese(Integer id){
         if(id==null){
             return ResponseData.error(400,"id不能为空");
         }
@@ -99,7 +99,7 @@ public class UserjueseContorller {
      *
      * */
     @PostMapping("selectjuese")
-    private ResponseData selectjuese(Integer id){
+    public ResponseData selectjuese(Integer id){
         if(id==null){
             return ResponseData.error(400,"id不能为空");
         }
@@ -119,7 +119,7 @@ public class UserjueseContorller {
      *
      * */
     @PostMapping("updatejuese")
-    private ResponseData updatejuese(Userjuese juese){
+    public ResponseData updatejuese(Userjuese juese){
         if(juese==null){
             return ResponseData.error(400,"起始小标不能为空");
         }

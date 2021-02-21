@@ -24,7 +24,7 @@ public class ShoreController {
 
     返回值   {"code":200,"inif":"提示",data:[{*}]}*/
      @GetMapping("getshore")
-    private ResponseData getshore(){
+     public ResponseData getshore(){
          List<ShoreXian> list=shoreser.getshore();
          return ResponseData.success(list);
      }
@@ -38,7 +38,7 @@ public class ShoreController {
     返回值   无
     */
      @PostMapping("saveshore")
-    private  ResponseData saveshore(ShoreXian shore){
+     public  ResponseData saveshore(ShoreXian shore){
          if(shore==null){
              return ResponseData.error(400,"shore没有值");
          }
@@ -57,7 +57,7 @@ public class ShoreController {
     返回值   无
     */
       @PostMapping("deleteshore")
-    private ResponseData deleteshore(Integer id){
+      public ResponseData deleteshore(Integer id){
           if(id==null){
               return ResponseData.error(400,"id没有值");
           }
@@ -74,7 +74,7 @@ public class ShoreController {
     返回值   {"code":200,"inif":"提示",data:[{*}]}
     */
     @PostMapping("queryshoreId")
-    private ResponseData queryshoreId(Integer id){
+    public ResponseData queryshoreId(Integer id){
         if(id==null){
             return ResponseData.error(400,"id没有值");
         }
@@ -91,7 +91,7 @@ public class ShoreController {
     返回值   {"code":200,"inif":"提示",data:[{*}]}
     */
     @PostMapping("updateshore")
-    private ResponseData updateshore(ShoreXian shore){
+    public ResponseData updateshore(ShoreXian shore){
         if(shore==null){
             return ResponseData.error(400,"shore没有值");
         }

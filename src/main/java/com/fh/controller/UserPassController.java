@@ -73,7 +73,7 @@ public class UserPassController {
      *
      * */
     @GetMapping("queryuser")
-    private ResponseData queryuser (Paramss param){
+    public ResponseData queryuser (Paramss param){
         if(param.getStart()==null){
             return ResponseData.error(400,"起始小标不能为空");
         }
@@ -96,7 +96,7 @@ public class UserPassController {
      *
      * */
     @PostMapping("deleteuser")
-    private ResponseData deleteuser(Integer id){
+    public ResponseData deleteuser(Integer id){
         if(id==null){
             return ResponseData.error(400,"id不能为空");
         }
@@ -116,7 +116,7 @@ public class UserPassController {
      *
      * */
     @PostMapping("selectuser")
-    private ResponseData selectuser(Integer id){
+    public ResponseData selectuser(Integer id){
         if(id==null){
             return ResponseData.error(400,"id不能为空");
         }
@@ -136,7 +136,7 @@ public class UserPassController {
      *
      * */
     @PostMapping("updateuser")
-    private ResponseData updateuser(UserParss user){
+    public ResponseData updateuser(UserParss user){
         if(user==null){
             return ResponseData.error(400,"对象不能为空");
         }
@@ -156,7 +156,7 @@ public class UserPassController {
      *
      * */
     @PostMapping("queryuserjue")
-    private ResponseData queryuserjue (Integer uid){
+    public ResponseData queryuserjue (Integer uid){
         if(uid==null){
             return ResponseData.error(400,"uid不能为空");
         }
@@ -175,7 +175,7 @@ public class UserPassController {
      *
      * */
     @PostMapping("saveuserjue")
-    private ResponseData saveuserjue(Integer uid,String rid){
+    public ResponseData saveuserjue(Integer uid,String rid){
         if(uid==null){
             return ResponseData.error(400,"juese不能为空");
         }
