@@ -11,7 +11,6 @@ import java.util.List;
 
 
 @RestController
-@CrossOrigin
 @RequestMapping("api/type")
 public class SpoContro {
     @Resource

@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserSer {
-    Map loginuser(UserParss user);
-
 
     Map saveuser(UserParss user);
 
@@ -24,4 +22,6 @@ public interface UserSer {
     List<Juese> queryuserjue(Integer uid);
 
     void saveuserjue(Integer uid,String rid);
+
+    Map loginuser(String realName, String password);
 }

@@ -6,6 +6,7 @@ import com.fh.entity.po.Juese;
 import com.fh.entity.po.UserParss;
 import com.fh.entity.vo.Paramss;
 import com.fh.service.UserSer;
+import com.fh.utils.JWT;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,15 +24,21 @@ public class UserSerImpl implements UserSer {
     @Resource
     private JueseDao jueseDao;
     @Override
-    public Map loginuser(UserParss user) {
+    public Map loginuser(String realName,String password) {
 
         Map map = new HashMap();
 
-       UserParss us= userDao.loginuser(user.getRealName());
+       UserParss us= userDao.loginuser(realName);
        if(us!=null){
-           if(us.getPassword().equals(user.getPassword())){
+           if(us.getPassword().equals(password)){
                //登录成功
+
+               Map user=new HashMap();
+               user.put("realName",realName);
+               user.put("password",password);
+               String token = JWT.sign(user, 600*30);
                map.put("mags",1);
+               map.put("data",token);
            }
            else {
                //密码不对登录失败

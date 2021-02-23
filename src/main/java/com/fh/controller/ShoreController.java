@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@CrossOrigin
 @RequestMapping("api/xian")
 public class ShoreController {
     @Resource

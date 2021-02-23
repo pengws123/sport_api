@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin
 @RestController
 @RequestMapping("api/user")
 public class UserPassController {
@@ -30,11 +29,14 @@ public class UserPassController {
      * */
 
     @PostMapping("loginuser")
-    public ResponseData loginuser(UserParss user){
-        if (user==null){
-            return ResponseData.error(400,"spo没有值");
+    public ResponseData loginuser(String realName,String password){
+        if (realName==null){
+            return ResponseData.error(400,"name没有值");
         }
-        Map map= userser.loginuser(user);
+        if (password==null){
+            return ResponseData.error(400,"password没有值");
+        }
+        Map map= userser.loginuser(realName,password);
         return ResponseData.success(map);
     }
      /*  新增用户

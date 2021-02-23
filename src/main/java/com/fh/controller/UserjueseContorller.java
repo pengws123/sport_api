@@ -10,7 +10,6 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.Map;
 
-@CrossOrigin
 @RestController
 @RequestMapping("api/userjuese")
 public class UserjueseContorller {
